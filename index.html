@@ -97,11 +97,12 @@
                     <div class="container">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                             <form action="search.php" method="get" enctype="multipart/form-data">
                             <input type="text" class="form-control" placeholder="Search">
                             
                             <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
                     
-                        </div>
+                       
                                 <ul class="tab-list": center;>
                        <li class="radio">
                                 <input sp-ctracking="siamphone-spec-more_option-price_range-cheaper_3k" sp-text="ราคาไม่เกิน 5,000 บาท" type="radio" class="price_range" name="price_range" id="lessthan5000" value="1">
@@ -123,6 +124,8 @@
                          <p align="right">
                              
                               <input type="submit" value="ค้นหา" class="btn btn-primary my-2">
+                                  <input type="submit" name="search" value="search">
+            </form>
                              </p>
                                    
                         </ul>
