@@ -36,54 +36,8 @@ if (isset($_GET['search'])) {
     $search_value = $_REQUEST['value'];
     $selected_price = $_GET['selected_price'];
 
-   /* switch ($selected_price) {
-        case 1:
-            $min_price = 0;
-            $max_price = 5000;
-            
-        break;    
-        case 2:
-            $min_price = 5001;
-            $max_price = 10000;
-         
-        break;    
-        case 3:
-            $min_price = 10001;
-            $max_price = 15000;
-        
-        break;    
-        case 4:
-            $min_price = 15001;
-            $max_price = 20000;
-        
-        break;   
-        case 5:
-            $min_price = 20001;
-            $max_price = 999999;
-            
-        // additional cases as needed
-    }
-*/
-/*
-$options = [
-    [0, 5000],
-    [5001, 10000],
-    [10001, 15000],
-    [15001, 20000],
-    [20001, 999999]
-];
+ 
 
-for ($i = 0; $i < count($options); $i++) {
-    switch($i+1) {
-        case $selected_price:
-            $min_price = $options[$i][0];
-            $max_price = $options[$i][1];
-            
-           // break 2;
-    }
-}
-
-*/
 
 $min_price = 0;
 $max_price = 0;
@@ -126,17 +80,15 @@ while ($i <= 5) {
                  SELECT * FROM Oppo WHERE post_keywords LIKE '%$search_value%' AND post_price BETWEEN $min_price AND $max_price";
     } 
     
- /*   if ($search_value) {
-        $search_query = "SELECT * FROM Apple WHERE post_keywords LIKE '%$search_value%' 
-                 UNION 
-                 SELECT * FROM Samsung WHERE post_keywords LIKE '%$search_value%' 
-                 UNION 
-                 SELECT * FROM Oppo WHERE post_keywords LIKE '%$search_value%' ";
-    }
-    
-    */
+ /
     else {
-        echo "<h3 style='margin-top:2rem; text-align: center; color:red;'>กรุณากรอกข้อมูล</h3>";
+         $search_query = "SELECT * FROM Apple WHERE post_keywords LIKE '%$search_value%' AND post_price BETWEEN $min_price AND $max_price
+                 UNION 
+                 SELECT * FROM Samsung WHERE post_keywords LIKE '%$search_value%' AND post_price BETWEEN $min_price AND $max_price
+                 UNION 
+                 SELECT * FROM Oppo WHERE post_keywords LIKE '%$search_value%' AND post_price BETWEEN $min_price AND $max_price";
+                 
+      
     }
 
     $run_query = mysqli_query($conn,$search_query);
@@ -176,14 +128,16 @@ while ($i <= 5) {
     
 </body>
 </html>
+/*
 <section class="breadcrumbs">
         <div class="breadcrumbs_title">
             
             <ul class="bread-list">
                 <br>
-                
-                <li><a href="https://novem7246.github.io/projectphone.github.io/index.html"><center>กลับหน้าหลัก</center></a></li>
+          
+              <li><a href="https://unacademic-night.000webhostapp.com/index.html"><center>กลับหน้าหลัก</center></a></li>
                 <p><br></p>
             </ul>
         </div>
     </section>
+*/
